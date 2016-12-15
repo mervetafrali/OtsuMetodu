@@ -66,5 +66,10 @@ varyans ya da en büyük sınıflar arası global varyans değerini veren eşik 
 
 *between class variance=*  weight(background) * weight(foreground) * (mean(background)-mean(foreground)) * (mean(background)-mean(foreground)) +
 
+Eşik seçiminde önce sınıflar arası varyansın(between class variance) maksimum değeri değerlendirilir.
+Bu eşiğin öncesinde kalan (background) kısımlardaki değerler “0” diğerleri “1” yani (255) olarak görüntüler düzenlenir. +
+
+
+Bu metotta formül yoğunluğu fazla olduğu için bir örneklemeyle formüllerin kullanışını aktarıcam: +
 
 
