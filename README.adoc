@@ -72,4 +72,21 @@ Bu eşiğin öncesinde kalan (background) kısımlardaki değerler “0” diğe
 
 Bu metotta formül yoğunluğu fazla olduğu için bir örneklemeyle formüllerin kullanışını aktarıcam: +
 
+image::otsuOrig.png[] 
+
+
+yukarudaki şekilde 6 tonlu bir görüntü ve histogramı bulunmaktadır.
+
+image::otsuBG.png
+
+image::bgExample.png[]
+
+image::otsuFG.png[] 
+
+image::fgExample.png[]
+
+image::sumExample.png[] 
+
+image::simplification.png[]
+
 
