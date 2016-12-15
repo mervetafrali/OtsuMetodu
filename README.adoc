@@ -75,7 +75,7 @@ Bu metotta formül yoğunluğu fazla olduğu için bir örneklemeyle formülleri
 image::otsuOrig.png[] 
 
 
-yukarudaki şekilde 6 tonlu bir görüntü ve histogramı bulunmaktadır.
+yukarıdaki şekilde 6 tonlu bir görüntü ve histogramı bulunmaktadır.
 
 image::otsuBG.png
 
@@ -88,5 +88,7 @@ image::fgExample.png[]
 image::sumExample.png[] 
 
 image::simplification.png[]
+
+== 5) Python ile Otsu Yönteminin Uygulama Örneği +
 
 
