@@ -40,16 +40,14 @@ hem de eşikten sonrası(foreground) için hesaplanır. +
 Her bir eleman eşik kabul edilerek her bir eleman için hesaplamalar yapılacağı için belirlenen elemandan öncesi eşik öncesi(background),belirlenen elemandan sonrası eşik sonrası(foreground) olarak adlandırılır. +
 
 Eşik öncesi değerleri hesaplamak için kullanılan formüller(background): +
-      *weight(background)=* seçilen histogram elemanına kadar olan elemanların piksel sayıları toplamı(kendisi dahil değil) / toplam piksel sayısı +
-      *mean(background)=* kendinden önceki her eleman için(histogram elemanı*histogram elemanının değeri) toplamları / seçilen histogram elemanına kadar olan elemanların piksel sayıları toplamı(kendisi dahil değil) +
-      *variance(background)= * kendinden önceki her eleman için ((histogram elemanı-mean(background))*(histogram elemanı-mean(background))*histogram elemanının değeri / seçilen histogram elemanına kadar olan elemanların piksel sayıları toplamı(kendisi dahil değil) +
-      
-      Eşik sonrası değerleri hesaplamak için kullanılan formüller(foreground): +
-	    *weight(foreground)= * seçilen histogram elemanından itibaren elemanların piksel sayıları toplamı(kendisi dahil) / toplam piksel sayısı
-      *mean(foreground)=* kendinden sonraki her eleman için(histogram elemanı*histogram elemanının değeri) toplamları / seçilen histogram elemanından itibaren elemanların piksel sayıları toplamı(kendisi dahil)
-      *variance(foreground)=* kendinden sonraki her eleman için ((histogram elemanı-mean(background))*(histogram elemanı-mean(background))*histogram elemanının değeri / seçilen histogram elemanından itibaren elemanların piksel sayıları toplamı(kendisi dahil)
-
-Bu üretilen “weight”,”mean” ve “variance” değerleri kullanılarak “within class variance” ve “ between class variance” değerleri hesaplanır.
+*weight(background)=* seçilen histogram elemanına kadar olan elemanların piksel sayıları toplamı(kendisi dahil değil) / toplam piksel sayısı +
+*mean(background)=* kendinden önceki her eleman için(histogram elemanı*histogram elemanının değeri) toplamları / seçilen histogram elemanına kadar olan elemanların piksel sayıları toplamı(kendisi dahil değil) +
+*variance(background)= * kendinden önceki her eleman için ((histogram elemanı-mean(background))*(histogram elemanı-mean(background))*histogram elemanının değeri / seçilen histogram elemanına kadar olan elemanların piksel sayıları toplamı(kendisi dahil değil) +
+Eşik sonrası değerleri hesaplamak için kullanılan formüller(foreground): +
+*weight(foreground)= * seçilen histogram elemanından itibaren elemanların piksel sayıları toplamı(kendisi dahil) / toplam piksel sayısı
+ *mean(foreground)=* kendinden sonraki her eleman için(histogram elemanı*histogram elemanının değeri) toplamları / seçilen histogram elemanından itibaren elemanların piksel sayıları toplamı(kendisi dahil)
+*variance(foreground)=* kendinden sonraki her eleman için ((histogram elemanı-mean(background))*(histogram elemanı-mean(background))*histogram elemanının değeri / seçilen histogram elemanından itibaren elemanların piksel sayıları toplamı(kendisi dahil)
+Bu üretilen “weight”,”mean” ve “variance” değerleri kullanılarak “within class variance” ve “ between class variance” değerleri hesaplanır. +
 Yani sınıf içi global varyans ve sınıflar arası global varyans hesaplanır. +
 Bu hesaplamalardan elde edilen değerler içerisinden sınıflar arasındaki yoğunluk değerleri için en iyi ayrımı en küçük sınıf içi global 
 varyans ya da en büyük sınıflar arası global varyans değerini veren eşik değeri optimum eşik değeri seçilir. +
