@@ -41,19 +41,45 @@ Her bir eleman eşik kabul edilerek her bir eleman için hesaplamalar yapılaca�
 
 Eşik öncesi değerleri hesaplamak için kullanılan formüller(background): +
 
+
+image::otsuOrig.png[] 
+
+
+yukarıdaki şekilde 6 tonlu bir görüntü ve histogramı bulunmaktadır.
+
+
+*Backgroung*
+
+image::bckground.png[]
+
 *weight(background)=* seçilen histogram elemanına kadar olan elemanların piksel sayıları toplamı(kendisi dahil değil) / toplam piksel sayısı +
+
+image::wb.png[]
+
 
 *mean(background)=* kendinden önceki her eleman için(histogram elemanı*histogram elemanının değeri) toplamları / seçilen histogram elemanına kadar olan elemanların piksel sayıları toplamı(kendisi dahil değil) +
 
+image::mb.png[]
+
 *variance(background)=*  kendinden önceki her eleman için ((histogram elemanı-mean(background)) * (histogram elemanı-mean(background)) * histogram elemanının değeri / seçilen histogram elemanına kadar olan elemanların piksel sayıları toplamı(kendisi dahil değil) +
+
+image::vb.png[]
 
 Eşik sonrası değerleri hesaplamak için kullanılan formüller(foreground): +
 
+image::foreground.png[] 
+
 *weight(foreground)=* seçilen histogram elemanından itibaren elemanların piksel sayıları toplamı(kendisi dahil) / toplam piksel sayısı
 
-*mean(foreground)=* kendinden sonraki her eleman için(histogram elemanı * histogram elemanının değeri) toplamları / seçilen histogram elemanından itibaren elemanların piksel sayıları toplamı(kendisi dahil)
+image::wf.png[] 
+
+*mean(foreground)=* kendinden sonraki her eleman için(histogram elemanı * histogram elemanının değeri) toplamları / seçilen histogram elemanından itibaren elemanların piksel sayıları toplamı(kendisi dahil) +
+
+image::mf.png[] 
 
 *variance(foreground)=* kendinden sonraki her eleman için ((histogram elemanı-mean(background))*(histogram elemanı-mean(background))*histogram elemanının değeri / seçilen histogram elemanından itibaren elemanların piksel sayıları toplamı(kendisi dahil) +
+
+image::vf.png[]
 
 Bu üretilen “weight”,”mean” ve “variance” değerleri kullanılarak “within class variance” ve “ between class variance” değerleri hesaplanır. +
 
@@ -72,10 +98,7 @@ Bu eşiğin öncesinde kalan (background) kısımlardaki değerler “0” diğe
 
 Bu metotta formül yoğunluğu fazla olduğu için bir örneklemeyle formüllerin kullanışını aktarıcam: +
 
-image::otsuOrig.png[] 
 
-
-yukarıdaki şekilde 6 tonlu bir görüntü ve histogramı bulunmaktadır.
 
 image::otsuBG.png
 
