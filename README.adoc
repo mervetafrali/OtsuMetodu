@@ -18,10 +18,16 @@
 
 |Fatma Selin Hangişi
 |15.12.2016
+ 
+|15.12.2016
+|Otsu Eşikleme
+
+|M.Sıla Genç, Gönül Toktay
 
 |Düzenleme
 |Merve Tafralı
 
+|1912.2016
 |===
 
 == 3) Giriş +
@@ -103,12 +109,40 @@ image::betweencv.png[]
 Eşik seçiminde önce sınıflar arası varyansın(between class variance) maksimum değeri değerlendirilir.
 Bu eşiğin öncesinde kalan (background) kısımlardaki değerler “0” diğerleri “1” yani (255) olarak görüntüler düzenlenir. +
 
-image::simplification.png[]
-
-
-image::otsuFG.png[] 
-
 
 == 5) Python ile Otsu Yönteminin Uygulama Örneği +
+
+
+[[source,python]]
+----
+
+import Image                                               #  Bu kod ile “Image” kütüphanesi Kullanılmıştır.
+
+im= Image.open("/home/selin/optik/ap9oic.jpg")             # Burada im değişkenine belirtilen dizindeki görüntü atanmıştır.
+
+pix = im.load()                                            #     pix değişkenine görüntü yüklenmiştir
+
+img = Image.new( 'RGB', (1191,1599), "black")              #  1191*1599 boyutlarında yeni bir boş görüntü oluşturulmuştur.
+
+pixels = img.load()                                        #    pixels değişkenine boş görüntü yüklenmiştir
+
+w=im.size[0]                                               #      w değişkenine çözünürlüğün genişliği atanmıştır
+
+h=im.size[1]                                               #     h değişkenine çözünürlüğün yüksekliği atanmıştır
+
+graylist=[[0]*h for x in range(w)]                         #   graylist adında w*h boyutunda iç içe bir liste oluşturulmuştur.her satır için sütunlar tanımlanmıştır da diyebiliriz. 
+
+for i in range(w):
+  for j in range(h):                                       #   iç içe döngü kurularak görüntüyü bir matrise çekmiştir
+
+       r, g, b = im.getpixel((i, j))                       #      matrisin her bir elemanı bir pixeli ifade eder ve burada her pixelin renk değerleri sırasıyla r,g ve b değişkenlerine atanır
+       gray=(int)((r*0.2126)+(g*0.7152)+(b*0.0722))        # gray değişkenine ,insan gözünün gama ışınlarını algılama oranlarına göre oluşturulan formüle kırmızı,yeşil ve mavi değerleri yerlerine konarak sekiz bitlik gri tonlarından hangisi o pixel için geçerliyse o atanır.
+
+       graylist[i][j]=gray                                 #     graylist’in [i][j] (piksel değeri) değerine bulunduğu pikselin gri değeri atanmış ve tüm piksellerin ağırlık toplama yöntemi kullanılarak bulunan gri değeri listeye kaydedilmiştir.
+
+       pixels[i,j]=(gray,gray,gray)                        #   görüntünün her pixeli ağırlık toplama yöntemine göre bulunan gri değeri atanır.Kod parçasında görüldüğü gibi standart olarak belirlenen kırmızı,yeşil ve mavi tonlarının oranlarının hepsine aynı değer girilmiştir.Bu gri tonunu elde edebilmek için yapılan işlemdir.
+
+img.save("/home/selin/optik/ap9oic.bmp","bmp")             #   görüntü farklı bir isimle ilk alınan klasöre gri olarak kaydedilmiştir.
+
 
 
