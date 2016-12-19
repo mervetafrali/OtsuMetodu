@@ -237,7 +237,8 @@ for p in range (w):
             otsu[p,q]=(255,255,255)
 otsu_image.save("C:/Users/MERVE/Pictures/new2.bmp")
 
- ----           
+---- 
+
 Resmin orjinal hali +
 
 image::Resim3.png[]
