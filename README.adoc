@@ -41,35 +41,39 @@ Her bir eleman eşik kabul edilerek her bir eleman için hesaplamalar yapılaca�
 
 Örnekler üzerinden formüllerin kullanışı ve çıkarılması: +
 
-Eşik öncesi değerleri hesaplamak için kullanılan formüller(background): +
-
-
 image::otsuOrig.png[] 
 
 
 yukarıdaki şekilde 6 tonlu bir görüntü ve histogramı bulunmaktadır.
 
+Eşik öncesi değerleri hesaplamak için kullanılan formüller(background): +
+
 
 *Backgroung*
 
-image::bckground.png[]
+image::bckground.png[] +
+
 
 *weight(background)=* seçilen histogram elemanına kadar olan elemanların piksel sayıları toplamı(kendisi dahil değil) / toplam piksel sayısı +
 
 image::wb.png[]
 
 
+
 *mean(background)=* kendinden önceki her eleman için(histogram elemanı*histogram elemanının değeri) toplamları / seçilen histogram elemanına kadar olan elemanların piksel sayıları toplamı(kendisi dahil değil) +
 
 image::mb.png[]
 
+
 *variance(background)=*  kendinden önceki her eleman için ((histogram elemanı-mean(background)) * (histogram elemanı-mean(background)) * histogram elemanının değeri / seçilen histogram elemanına kadar olan elemanların piksel sayıları toplamı(kendisi dahil değil) +
 
-image::vb.png[]
+
+image::vb.png[] +
 
 Eşik sonrası değerleri hesaplamak için kullanılan formüller(foreground): +
 
-image::foreground.png[] 
+
+image::foreground.png[] +
 
 *weight(foreground)=* seçilen histogram elemanından itibaren elemanların piksel sayıları toplamı(kendisi dahil) / toplam piksel sayısı
 
