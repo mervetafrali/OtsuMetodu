@@ -249,11 +249,11 @@ image::m1agırlık.png[]
 
 Resmin medyan yöntemi ile aldığı son hal +
 
-image::m1medyan.png
+image::m1medyan.png[]
 
 Otsu yöntemi ile gelidği hal +
 
-image::new2otsu.png 
+image::new2otsu.png[]
 
 
 == 6) Referanslar +
