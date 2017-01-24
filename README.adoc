@@ -112,8 +112,8 @@ Bu eşiğin öncesinde kalan (background) kısımlardaki değerler “0” diğe
 == 5) Python ile Otsu Yönteminin Uygulama Örneği +
 
 
-[[source,python]]
-----
+[source,python]
+---------------------------------------------------------------------
 
 import Image
 im= Image.open("C:\Users\MERVE\Pictures\m1normal.png")
@@ -230,7 +230,7 @@ for p in range (w):
             otsu[p,q]=(255,255,255)
 otsu_image.save("C:\Users\MERVE\Pictures\m1normal_otsu.bmp")
 
----- 
+---------------------------------------------------------------------
 
 Resmin orjinal hali +
 
