@@ -253,6 +253,6 @@ image::new2otsu.png[]
 . http://www.labbookpages.co.uk/software/imgProc/otsuThreshold.html#examples
 . http://www.cescript.com/2012/07/otsu-metodu-ile-adaptif-esikleme.html
 . http://www.atasoyweb.net/Otsu-Esik-Belirleme-Metodu
-. https://en.wikipedia.org/wiki/Otsu%27s_method
+
 
 
