@@ -103,7 +103,7 @@ image::sumExample.png[]
 
 *between class variance=*  weight(background) * weight(foreground) * (mean(background)-mean(foreground)) * (mean(background)-mean(foreground)) +
 
-image::betweencv.png[]
+image::btwc.png[]
 
 Eşik seçiminde önce sınıflar arası varyansın(between class variance) maksimum değeri değerlendirilir.
 Bu eşiğin öncesinde kalan (background) kısımlardaki değerler “0” diğerleri “1” yani (255) olarak görüntüler düzenlenir. +
