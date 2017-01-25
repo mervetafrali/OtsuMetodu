@@ -36,7 +36,7 @@ Otsu algoritmasının nasıl çalıştığı,neyi amaçladığı uygulamayla anl
 
 == 4) Otsu Eşikleme Yöntemi +
 
-Adını bu metodu geliştiren Nobuyuki Otsu’dan almıştır.Yöntem gri seviye görüntüler üzerinde çalışır ve sadece renklerin görüntü üzerinde kaçar defa bulunduğuna bakar.
+Adını bu metodu geliştiren Nobuyuki Otsu’dan almıştır.Yöntem gri seviye görüntüler üzerinde çalışır ve sadece renklerin görüntü üzerinde kaçar defa bulunduğuna bakar http://www.cescript.com/2012/07/otsu-metodu-ile-adaptif-esikleme.html[[2]].
 Gri seviyedeki bir görüntüyü ikili seviyeye dönüştürülerek kullanılabilecek en uygun eşik değerinin tespitini sağlar.Bu yöntemde, renklerin görüntü üzerinde var olma sayısına bakıldığı için uygulamaların eşik belirleme
 adımına geçmeden önce renk histogramı hesaplanır ve tüm hesaplamalar bu histogram üzerinden yapılır.
 Otsu algoritması histogramda eşikleme yapılabilecek en uygun konumun bulunması için kullanılır. +
@@ -51,7 +51,7 @@ image::otsuOrig.png[]
 
 yukarıdaki şekilde 6 tonlu bir görüntü ve histogramı bulunmaktadır.
 
-Eşik öncesi değerleri hesaplamak için kullanılan formüller(background): +
+Eşik öncesi değerleri hesaplamak için kullanılan formüller(background) http://www.labbookpages.co.uk/software/imgProc/otsuThreshold.html#examples[[1]] : +
 
 
 *Backgroung*
@@ -106,7 +106,7 @@ image::sumExample.png[]
 image::btwc.png[]
 
 Eşik seçiminde önce sınıflar arası varyansın(between class variance) maksimum değeri değerlendirilir.
-Bu eşiğin öncesinde kalan (background) kısımlardaki değerler “0” diğerleri “1” yani (255) olarak görüntüler düzenlenir. +
+Bu eşiğin öncesinde kalan (background) kısımlardaki değerler “0” diğerleri “1” yani (255) olarak görüntüler düzenlenir http://www.atasoyweb.net/Otsu-Esik-Belirleme-Metodu[[3]] . +
 
 
 == 5) Python ile Otsu Yönteminin Uygulama Örneği +
@@ -253,7 +253,6 @@ image::new2otsu.png[]
 . http://www.labbookpages.co.uk/software/imgProc/otsuThreshold.html#examples
 . http://www.cescript.com/2012/07/otsu-metodu-ile-adaptif-esikleme.html
 . http://www.atasoyweb.net/Otsu-Esik-Belirleme-Metodu
-. https://en.wikipedia.org/wiki/Otsu%27s_method
 . https://en.wikipedia.org/wiki/Otsu%27s_method
 
 
