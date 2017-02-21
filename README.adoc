@@ -6,7 +6,6 @@
 . Versiyon Geçmişi +
 . Giriş +
 . Otsu Eşikleme Yöntemi +
-. Python ile Otsu Yönteminin Uygulama Örneği +
 . Referanslar +
 
 == 2) Versiyon Geçmişi +
@@ -109,128 +108,6 @@ Eşik seçiminde önce sınıflar arası varyansın(between class variance) maks
 Bu eşiğin öncesinde kalan (background) kısımlardaki değerler “0” diğerleri “1” yani (255) olarak görüntüler düzenlenir http://www.atasoyweb.net/Otsu-Esik-Belirleme-Metodu[[3]] . +
 
 
-== 5) Python ile Otsu Yönteminin Uygulama Örneği +
-
-
-[source,python]
----------------------------------------------------------------------
-
-import Image
-im= Image.open("C:\Users\MERVE\Pictures\m1normal.png")
-pix = im.load()
-w=im.size[0]
-h=im.size[1]
-print w , h ;
-img = Image.new( 'RGB', (w,h), "black")
-pixels = img.load()
-graylist=[[0]*h for x in range(w)]
-for i in range(w):
-  for j in range(h):
-       r, g, b = im.getpixel((i, j))
-       gray=(int)((r*0.2126)+(g*0.7152)+(b*0.0722))
-       graylist[i][j]=gray
-       print graylist[i][j]
-       pixels[i,j]=(gray,gray,gray)  
-img.save("C:\Users\MERVE\Pictures\m1normal_gray.bmp","bmp")
-histogram=[0]*256
-for m in range (w):
-    for n in range(h):
-        x=graylist[m][n]
-        histogram[x]=histogram[x]+1
-def add_back(liste,indis):
-    sum_back=0
-    for a in range(indis):
-        sum_back=sum_back+liste[a]
-    return sum_back
-def add_fore(liste,indis):
-    sum_fore=0
-    for b in range(indis,len(histogram)-1,1):
-        sum_fore=sum_fore+liste[b]
-    return sum_fore
-def weight_back(liste,indis):
-    wb=float(add_back(liste, indis))/(add_back(liste, len(liste)))
-    return wb
-def weight_fore(liste,indis):
-    wf=float(add_fore(liste,indis))/(add_back(liste,len(liste)))
-    return wf
-def mean_back(liste,indis):
-    mbpay=0
-    for d in range (indis-1):
-        mbpay=mbpay+(d*liste[d])
-    if add_back(liste,indis)==0:
-        mb=1
-    else:
-        mb=float(mbpay)/(add_back(liste,indis))
-    return mb
-def mean_fore(liste,indis):
-    mfpay=0
-    for e in range (indis,len(liste)-1,1):
-        mfpay=mfpay+(e*liste[e])
-    if add_fore(liste,indis)==0:
-        mf=1
-    else:
-        mf=float(mfpay)/(add_fore(liste,indis))
-    return mf
-def variance_back(liste,indis):
-    vbpay=0
-    for f in range (indis-1):
-        vbpay=vbpay+((f-mean_back(liste,indis))*(f-mean_back(liste,indis))*liste[f])
-    if add_back(liste,indis)==0:
-        vb=1
-    else:
-        vb=float(vbpay)/(add_back(liste,indis))
-    return vb
-def variance_fore(liste,indis):
-    vfpay=0
-    for g in range (indis,len(liste)-1,1):
-        vfpay=vfpay+((g-mean_fore(liste,indis))*(g-mean_fore(liste,indis))*g)
-    if add_fore(liste,indis)==0:
-        vf=1
-    else:
-        vf=float(vfpay)/(add_fore(liste,indis))
-    return vf
-def within_class_variance(liste,indis):
-    wcv=(weight_back(liste,indis)*variance_back(liste,indis))+(weight_fore(liste,indis)*variance_fore(liste,indis))
-    return wcv
-def between_class_variance(liste,indis):
-    bcv=(weight_back(liste,indis)*weight_fore(liste,indis)*(mean_back(liste,indis)-mean_fore(liste,indis))*(mean_back(liste,indis)-mean_fore(liste,indis)))
-    return bcv  
-wcv=([0])*256
-for z in range (len(histogram)-1):
-    wcv[z]=within_class_variance(histogram,z)
-bcv=([0])*256
-for u in range (len(histogram)-1):
-    bcv[u]=between_class_variance(histogram,u)
-def esik_wcv(liste):
-    minimum=liste[0]
-    esik=0
-    for t in range (1,len(liste)-1):
-        if liste[t]<minimum:
-            minimum=liste[t]
-            esik=t
-    return esik
-def esik_bcv(liste):
-    maximum=liste[0]
-    esik=0
-    for c in range (1,len(liste)-1):
-        if liste[c]>maximum:
-            maximum=liste[c]
-            esik=c
-    return esik
-esik_wcv_deger=esik_wcv(wcv)
-esik_bcv_deger=esik_bcv(bcv)
-print esik_wcv_deger
-otsu_image=Image.open("C:\Users\MERVE\Pictures\m1normal_gray.bmp")
-otsu=otsu_image.load()
-for p in range (w):
-    for q in range (h):
-        if graylist[p][q]<esik_bcv_deger:
-            otsu[p,q]=(0,0,0)
-        if graylist[p][q]>esik_bcv_deger:
-            otsu[p,q]=(255,255,255)
-otsu_image.save("C:\Users\MERVE\Pictures\m1normal_otsu.bmp")
-
----------------------------------------------------------------------
 
 Resmin orjinal hali +
 
