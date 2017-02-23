@@ -45,7 +45,7 @@ Her bir eleman eşik kabul edilerek her bir eleman için hesaplamalar yapılaca�
 
 Örnekler üzerinden formüllerin kullanışı ve çıkarılması: +
 
-image::otsuOrig.png[] 
+image::https://github.com/mervetafrali/OtsuMetodu/raw/master/otsuOrig.png[] 
 
 
 yukarıdaki şekilde 6 tonlu bir görüntü ve histogramı bulunmaktadır.
@@ -55,39 +55,39 @@ Eşik öncesi değerleri hesaplamak için kullanılan formüller(background) htt
 
 *Backgroung*
 
-image::bckground.png[]
+image::https://github.com/mervetafrali/OtsuMetodu/raw/master/bckground.png[]
 
 
 *weight(background)=* seçilen histogram elemanına kadar olan elemanların piksel sayıları toplamı(kendisi dahil değil) / toplam piksel sayısı +
 
-image::wb.png[]
+image::https://github.com/mervetafrali/OtsuMetodu/raw/master/wb.png[]
 
 *mean(background)=* kendinden önceki her eleman için(histogram elemanı*histogram elemanının değeri) toplamları / seçilen histogram elemanına kadar olan elemanların piksel sayıları toplamı(kendisi dahil değil) +
 
-image::mb.png[] 
+image::https://github.com/mervetafrali/OtsuMetodu/raw/master/mb.png[] 
 
 
 *variance(background)=*  kendinden önceki her eleman için ((histogram elemanı-mean(background)) * (histogram elemanı-mean(background)) * histogram elemanının değeri / seçilen histogram elemanına kadar olan elemanların piksel sayıları toplamı(kendisi dahil değil) +
 
 
-image::vb.png[] 
+image::https://github.com/mervetafrali/OtsuMetodu/raw/master/vb.png[] 
 
 Eşik sonrası değerleri hesaplamak için kullanılan formüller(foreground): +
 
 
-image::foreground.png[] 
+image::https://github.com/mervetafrali/OtsuMetodu/raw/master/foreground.png[] 
 
 *weight(foreground)=* seçilen histogram elemanından itibaren elemanların piksel sayıları toplamı(kendisi dahil) / toplam piksel sayısı
 
-image::wf.png[] 
+image::https://github.com/mervetafrali/OtsuMetodu/raw/master/wf.png[] 
 
 *mean(foreground)=* kendinden sonraki her eleman için(histogram elemanı * histogram elemanının değeri) toplamları / seçilen histogram elemanından itibaren elemanların piksel sayıları toplamı(kendisi dahil) +
 
-image::mf.png[] 
+image::https://github.com/mervetafrali/OtsuMetodu/raw/master/mf.png[] 
 
 *variance(foreground)=* kendinden sonraki her eleman için ((histogram elemanı-mean(background))*(histogram elemanı-mean(background))*histogram elemanının değeri / seçilen histogram elemanından itibaren elemanların piksel sayıları toplamı(kendisi dahil) +
 
-image::vf.png[]
+image::https://github.com/mervetafrali/OtsuMetodu/raw/master/vf.png[]
 
 Bu üretilen “weight”,”mean” ve “variance” değerleri kullanılarak “within class variance” ve “ between class variance” değerleri hesaplanır. +
 
@@ -98,11 +98,11 @@ varyans ya da en büyük sınıflar arası global varyans değerini veren eşik 
 
 *within class variance=*  (weight(background) * variance(background)) +(weight(foreground) * variance(foreground)) +
 
-image::sumExample.png[] 
+image::https://github.com/mervetafrali/OtsuMetodu/raw/master/sumExample.png[] 
 
 *between class variance=*  weight(background) * weight(foreground) * (mean(background)-mean(foreground)) * (mean(background)-mean(foreground)) +
 
-image::btwc.png[]
+image::https://github.com/mervetafrali/OtsuMetodu/raw/master/btwc.png[]
 
 Eşik seçiminde önce sınıflar arası varyansın(between class variance) maksimum değeri değerlendirilir.
 Bu eşiğin öncesinde kalan (background) kısımlardaki değerler “0” diğerleri “1” yani (255) olarak görüntüler düzenlenir http://www.atasoyweb.net/Otsu-Esik-Belirleme-Metodu[[3]] . +
@@ -111,19 +111,19 @@ Bu eşiğin öncesinde kalan (background) kısımlardaki değerler “0” diğe
 
 Resmin orjinal hali +
 
-image::Resim3.png[]
+image::https://github.com/mervetafrali/OtsuMetodu/raw/master/Resim3.png[]
 
 1. Adım +
 
-image::m1agırlık.png[]
+image::https://github.com/mervetafrali/OtsuMetodu/raw/master/m1agırlık.png[]
 
 2. Adım +
 
-image::m1medyan.png[]
+image::https://github.com/mervetafrali/OtsuMetodu/raw/master/m1medyan.png[]
 
 Son Adım +
 
-image::new2otsu.png[]
+image::https://github.com/mervetafrali/OtsuMetodu/raw/master/new2otsu.png[]
 
 
 == 6) Referanslar +
