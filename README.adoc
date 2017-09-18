@@ -113,11 +113,11 @@ Resmin orjinal hali +
 
 image::https://github.com/mervetafrali/OtsuMetodu/raw/master/Resim3.png[]
 
-1. Adım +
+ 1. Adım +
 
 image::https://github.com/mervetafrali/OtsuMetodu/raw/master/m1agırlık.png[]
 
-2. Adım +
+ 2. Adım +
 
 image::https://github.com/mervetafrali/OtsuMetodu/raw/master/m1medyan.png[]
 
